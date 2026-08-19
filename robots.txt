@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+
+# Common bad-behaviour crawlers can be blocked here if needed.
+
+Sitemap: https://annaice.ir/sitemap.xml
