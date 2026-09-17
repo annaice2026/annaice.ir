@@ -81,8 +81,8 @@
         { "@type": "Country", "name": "ایران" }
       ],
       "makesOffer": [
-        { "@type": "Offer", "itemOffered": { "@type": "Product", "name": "یخ لیوانی ساده" } },
-        { "@type": "Offer", "itemOffered": { "@type": "Product", "name": "یخ لیوانی طعم‌دار" } }
+        { "@type": "Offer", "price": "890000", "priceCurrency": "IRR", "itemOffered": { "@type": "Product", "name": "یخ لیوانی ساده" } },
+        { "@type": "Offer", "price": "1100000", "priceCurrency": "IRR", "itemOffered": { "@type": "Product", "name": "یخ لیوانی طعم‌دار" } }
       ]
     },
     {
@@ -172,6 +172,11 @@
       <a href="#faq">سوالات متداول</a>
       <a href="#contact" class="nav-cta">تماس و سفارش</a>
     </nav>
+
+    <button class="cart-btn" id="cartOpen" type="button" aria-haspopup="dialog" aria-controls="cart" aria-label="سبد خرید" hidden>
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5.5 8h13l-1 13h-11z"/><path d="M9 8V6.5a3 3 0 0 1 6 0V8"/></svg>
+      <span class="cart-count" id="cartCount" hidden>۰</span>
+    </button>
 
     <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="nav" aria-label="باز کردن منو">
       <span></span><span></span><span></span>
@@ -321,6 +326,8 @@
               <li>مناسب مصرف حرفه‌ای و خانگی</li>
               <li>قابل عرضه به‌صورت عمده و کارتنی</li>
             </ul>
+            <p class="price-line">قیمت هر لیوان: <b>۸۹٬۰۰۰ تومان</b></p>
+            <div data-buy="plain"></div>
           </div>
         </article>
 
@@ -340,6 +347,8 @@
               <li>ایده‌آل برای منوی تابستانی کافی‌شاپ</li>
               <li>ظاهر جذاب برای پذیرایی و مراسم</li>
             </ul>
+            <p class="price-line">قیمت هر لیوان: <b>۱۱۰٬۰۰۰ تومان</b></p>
+            <a class="buy-link" href="#flavors">انتخاب طعم و افزودن به سبد ←</a>
           </div>
         </article>
       </div>
@@ -637,6 +646,30 @@
 <a class="fab" href="tel:+989331330905" aria-label="تماس تلفنی با آنا ایس">
   <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>
 </a>
+
+<!-- ==================== BASKET ==================== -->
+<dialog class="cart" id="cart" aria-labelledby="cart-title">
+  <div class="cart-panel">
+    <div class="cart-head">
+      <h2 id="cart-title">سبد خرید</h2>
+      <button type="button" class="cart-close" id="cartClose" aria-label="بستن سبد خرید">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>
+      </button>
+    </div>
+
+    <p class="cart-empty" id="cartEmpty">
+      سبد خرید شما خالی است.
+      <a href="#flavors">مشاهده طعم‌ها</a>
+    </p>
+    <ul class="cart-list" id="cartList" hidden></ul>
+
+    <div class="cart-foot" id="cartFoot" hidden>
+      <div class="cart-total"><span>جمع کل</span><b id="cartTotal">۰ تومان</b></div>
+      <a class="btn btn-primary cart-checkout" id="cartCheckout" href="https://wa.me/989331330905" target="_blank" rel="noopener">ثبت سفارش در واتساپ</a>
+      <button type="button" class="cart-clear" id="cartClear">خالی کردن سبد</button>
+    </div>
+  </div>
+</dialog>
 
 <script src="script.js" defer></script>
 </body>
